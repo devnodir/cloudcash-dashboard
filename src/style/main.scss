@@ -1,0 +1,627 @@
+//COLORS
+$default-color: #FFC145;
+$colorWhite: #ffffff;
+$cloudCashcolor: #2081C2;
+
+// mixin
+@mixin flexItem {
+    display: flex;
+    align-items: center;
+}
+
+// scroll styles
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+// CSS fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+#sidebarSec{
+    position: fixed;
+    overflow: scroll;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 0 7px #b7b7b7b8;
+    width: 230px;
+    height: 680px;
+    .toggle{
+        display: none;
+    }
+    .giveMoney{
+        margin-bottom: 10px;
+    }
+    .navbar-logo{
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+    .nav-menu-items{
+        padding: 0 30px;
+        .nav-text{
+            list-style-type: none;
+            .nav-link{
+                padding: 5px 15px;
+                color: #CECECE;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                margin: 10px -15px;
+                svg{
+                    margin: 10px 10px;
+                }
+            }
+        }
+        .active{
+            background-color: #F0F7FF;
+            width: 115%;
+            border-radius: 5px;
+        }
+    }
+    .premimu__upradge{
+        margin: 150px 15px 30px;
+        a{
+            background-color: $default-color;
+            padding: 12px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            text-decoration: none;
+            color: #404040;
+            font-weight: 500;
+            font-family: system-ui;
+        }
+    }
+}
+.main{
+    margin-left: 15rem;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0 0;
+        .toggle{
+            display: none;
+        }
+        .texts{
+            margin: 0 25px;
+            h2{
+                margin-bottom: 0;
+                font-family: 'Montserrat', sans-serif;
+            }
+            p{
+                color: #AEAEAE;
+                font-family: 'Open Sans', sans-serif;
+                margin: 0;
+            }    
+        }
+        .tabs{
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            .icons{
+                margin-right: 15px;
+                color: #E3E3E3;
+                &:hover{
+                    cursor: pointer;
+                    color: #404040;
+                }
+            }
+            .profile{
+                @include flexItem();
+                div{
+                    background-color: $default-color;
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 8px;
+                    border-radius: 50px;
+                }
+                span{
+                    .name{
+                        font-weight: 500;
+                        margin: 0;
+                        font-size: 15px;
+                        font-family: system-ui;
+                    }
+                    .info{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .elements{
+        display: flex;
+        .cards{ // Credit card
+            margin: 25px 25px 25px;
+            .creditCard{
+                box-shadow: 0 6px 15px #c1c1c1d1;
+                width: 650px;
+                height: 350px;
+                border-radius: 20px;
+                margin-bottom: 25px;
+                #themeCard{
+                    padding: 10px 20px;
+                    font-size: 25px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 600;
+                }
+                .cardSide{
+                    display: flex;
+                    justify-content: space-around;
+                    .card{ //card main
+                        background-color: #2081C2;
+                        width: 370px;
+                        height: 230px;
+                        padding: 20px;
+                        margin: -10px 0;
+                        border-radius: 30px;
+                        position: relative;
+                        #leftIcon{
+                            position: absolute;
+                            top: 40%;
+                            left: -12%;
+                            font-size: 55px;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                        #rightIcon{
+                            position: absolute;
+                            left: 98%;
+                            top: 40%;
+                            font-size: 55px;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                        .cloudCash{ //cloudcash logo
+                            margin: 0;
+                            color: $colorWhite;
+                            font-weight: bold;
+                            font-family: 'Montserrat', sans-serif;
+                            letter-spacing: 0.2px;
+                        }
+                        .accountType{ //account type name
+                            text-transform: uppercase;
+                            color: #76B2DA;
+                            margin: 0;
+                            font-size: 10px;
+                            font-weight: bold;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+                        h3{ //card number
+                            color: $colorWhite;
+                            margin: 40px 0 40px;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 25px;
+                            font-weight: 600;
+                        }
+                        .cardName{
+                            display: flex;
+                            .cardHolderName{
+                                p{
+                                    font-family: 'Roboto', sans-serif;
+                                    margin: 0 0 5px;
+                                    font-size: 12px;
+                                    font-weight: 300;
+                                    color: $colorWhite;
+                                }
+                                h4{
+                                    margin: 0;
+                                    font-size: 15px;
+                                    color: $colorWhite;
+                                    font-family: 'Roboto', sans-serif;
+                                }
+                            }
+                            .expireDate{
+                                margin-left: 30px;
+                                p{
+                                    font-family: 'Roboto', sans-serif;
+                                    margin: 0 0 5px;
+                                    font-size: 12px;
+                                    font-weight: 300;
+                                    color: $colorWhite;
+                                }
+                                h4{
+                                    margin: 0;
+                                    font-size: 15px;
+                                    color: $colorWhite;
+                                    font-family: 'Roboto', sans-serif;
+                                }
+                            }
+                        }
+                    }
+                    .balanceInfos{
+                        text-align: right;
+                        .currentBalance{
+                            h2{
+                                font-size: 30px;
+                                font-family: 'Roboto', sans-serif;
+                                margin: 0;
+                                font-weight: 700;
+                                color: #197BBD;
+                            }
+                            p{
+                                margin: 0;
+                                font-family: system-ui;
+                                font-size: 15px;
+                                color: #AEAEAE;
+                            }
+                        }
+                        .income{
+                            h3{
+                                font-size: 25px;
+                                font-family: 'Roboto', sans-serif;
+                                margin: 30px 0 0;
+                                font-weight: 700;
+                                color: #439A86; 
+                            }
+                            p{
+                                margin: 0;
+                                font-family: system-ui;
+                                font-size: 15px;
+                                color: #AEAEAE;
+                            }
+                        }
+                        .outcome{
+                            h4{
+                                font-size: 20px;
+                                font-family: 'Roboto', sans-serif;
+                                margin: 30px 0 0;
+                                font-weight: 700;
+                                color: #BB4430; 
+                            }
+                            p{
+                                margin: 0;
+                                font-family: system-ui;
+                                font-size: 15px;
+                                color: #AEAEAE;
+                            }
+                        }
+                    }
+                }
+            }
+            .transaction{
+                box-shadow: 0 6px 15px #c1c1c1d1;
+                width: 650px;
+                height: 300px;
+                overflow-y: scroll;
+                border-radius: 10px;
+                .tableMain{
+                    padding: 20px;
+                    p{
+                        margin: 0;
+                        font-size: 25px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 600;
+                    }
+                    table{
+                        width: 100%;
+                        margin-top: 15px;
+                        border-collapse: collapse;
+                        td, th {
+                            border: 1px solid #dddddd;
+                            text-align: left;
+                            padding: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        .goals{ // Goal side
+            margin: 35px 0 25px;
+            .goalTitle{
+                display: flex;
+                align-items: center;
+                svg{
+                    margin: 0 10px;
+                }
+            }
+            .cardss{ //cards
+                display: flex;
+                position: relative;
+                .goalsCard{
+                    box-shadow: 0 6px 15px #c1c1c1d1;
+                    width: 115px;
+                    padding: 10px;
+                    margin: 0 10px 0 0;
+                    border-radius: 20px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    span{
+                        h4{
+                            font-family: 'Roboto', sans-serif;
+                            margin: 0;
+                            color: #696969;
+                            font-size: 20px;
+                        }
+                        p{
+                            margin: 0;
+                            color: #AEAEAE;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 15px;
+                        }
+                        margin-bottom: 30px;
+                    }
+                    .cardIcon{
+                        margin: 30px 0 0;
+                        font-size: 35px;
+                    }
+                    .cardType{
+                        font-size: 20px;
+                        margin: 0;
+                        font-family: system-ui;
+                        font-weight: 400;
+                    }
+                }
+                .rightIcon{
+                    font-size: 55px;
+                    position: absolute;
+                    right: -10%;
+                    top: 30%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .newTransaction{ //new transaction card
+                width: 365px;
+                height: 210px;
+                padding: 5px;
+                margin: 15px 0 15px;
+                box-shadow: 0 6px 15px #c1c1c1d1;
+                border-radius: 20px;
+                p{ //new Transaction title text
+                    font-size: 25px;
+                    font-weight: 700;
+                    padding: 10px;
+                    margin: 0;
+                    font-family: 'Montserrat', sans-serif;
+                }
+                .users{ // users card
+                    span{
+                        display: flex;
+                        justify-content: space-around;
+                        div{
+                            text-align: center;
+                        }
+                    }
+                }
+                .sum{ //input and button
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 5px;
+                    input{
+                        border: 3px solid #197BBD;
+                        padding: 5px;
+                        border-radius: 10px;
+                    }
+                    button{
+                        background-color: $default-color;
+                        border-radius: 15px;
+                        border: none;
+                        padding: 7px;
+                    }
+                }
+            }
+            .redSquare{ // red square
+                background-color: #D85B45;
+                border-radius: 20px;
+                width: 365px;
+                height: 225px;
+                img{
+                    width: 50%;
+                }
+                p{
+                    font-family: 'Roboto', sans-serif;
+                    color: #ffffff;
+                    font-weight: 700;
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/** RESPONSIVE **/
+
+@media screen and (max-width: 500px){
+    #sidebarSec{
+        position: fixed;
+        width: 45px;
+        z-index: 999;
+        transition: 0.5s linear;
+        .navbar-logo{
+            padding: 40px 45px;
+        }
+        .nav-menu-items{
+            padding: 0 45px;
+            .nav-text{
+                font-size: 20px;
+            }
+        }
+        .premimu__upradge{
+            margin: 0px 25px 30px;
+        }
+        .toggle{
+            float: left;
+            display: block;
+            margin-left: 5px;
+            font-size: 35px;
+        }
+    }
+    .sidebar-menu.active{
+        width: 375px!important;
+        height: 1000px!important;
+        overflow: hidden!important;
+    }
+    .main{
+        margin: 0;
+        .header{
+            display: inline;
+            align-items: end;
+            .texts{
+                margin: 0 55px;
+                h2{
+                    font-size: 25px;
+                }
+            }
+            .tabs{
+                justify-content: center;
+            }
+        }
+        .elements{
+            display: inline;
+            .cards{
+                margin: 25px 55px 25px;
+                .creditCard{
+                    width: 295px;
+                    height: 300px;
+                    .cardSide{
+                        display: inline;
+                        .card{
+                            width: 270px;
+                            height: 200px;
+                            margin: 0 13px;
+                            h3{
+                                margin: 30px 0 30px;
+                            }
+                            #leftIcon{
+                                position: absolute;
+                                top: 40%;
+                                left: -11%;
+                                font-size: 40px;
+                            }
+                            #rightIcon{
+                                position: absolute;
+                                top: 40%;
+                                left: 96%;
+                                font-size: 40px;
+                            }
+                        }
+                        .balanceInfos{
+                            display: none;
+                        }
+                    }
+                }
+                .transaction{
+                    width: 295px;
+                    .tableMain{
+                        table{
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+            .goals{
+                display: none;
+            }
+        }
+    }
+}
+@media (min-width: 320px) and (max-width: 370px){
+    #sidebarSec{
+        position: fixed;
+        width: 45px;
+        z-index: 999;
+        transition: 0.5s linear;
+        .navbar-logo{
+            padding: 40px 45px;
+        }
+        .nav-menu-items{
+            padding: 0 45px;
+            .nav-text{
+                font-size: 20px;
+            }
+        }
+        .premimu__upradge{
+            margin: 0px 25px 30px;
+        }
+        .toggle{
+            float: left;
+            display: block;
+            margin-left: 5px;
+            font-size: 35px;
+        }
+    }
+    .sidebar-menu.active{
+        width: 360px!important;
+        overflow: hidden!important;
+    }
+    .main{
+        margin: 0;
+        .header{
+            display: inline;
+            align-items: end;
+            .texts{
+                margin: 0 55px;
+                h2{
+                    font-size: 25px;
+                }
+            }
+            .tabs{
+                margin-right: -20px;
+            }
+        }
+        .elements{
+            display: inline;
+            .cards{
+                margin: 25px 55px 25px;
+                .creditCard{
+                    width: 295px;
+                    height: 300px;
+                    .cardSide{
+                        display: inline;
+                        .card{
+                            width: 270px;
+                            height: 200px;
+                            margin: 0 13px;
+                            h3{
+                                margin: 30px 0 30px;
+                            }
+                            #leftIcon{
+                                position: absolute;
+                                top: 40%;
+                                left: -11%;
+                                font-size: 40px;
+                            }
+                            #rightIcon{
+                                position: absolute;
+                                top: 40%;
+                                left: 96%;
+                                font-size: 40px;
+                            }
+                        }
+                        .balanceInfos{
+                            display: none;
+                        }
+                    }
+                }
+                .transaction{
+                    width: 295px;
+                    .tableMain{
+                        table{
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+            .goals{
+                display: none;
+            }
+        }
+    }
+}
